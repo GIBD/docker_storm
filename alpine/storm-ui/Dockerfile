@@ -1,4 +1,4 @@
-FROM gibdfrcu/base:alpine
+FROM gibdfrcu/storm:alpine
 
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
