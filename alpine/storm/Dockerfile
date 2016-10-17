@@ -1,4 +1,4 @@
-FROM gibdfrcu/base:alpine-python3
+FROM gibdfrcu/base:alpine
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
