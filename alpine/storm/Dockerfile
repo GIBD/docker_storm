@@ -27,10 +27,12 @@ RUN mkdir $SUPERVISORD_D_CONF && \
 	
 
 
-COPY ["storm.yaml", "$STORM_HOME/conf/"]
+COPY storm.yaml $STORM_HOME/conf/
+COPY cluster.xml $STORM_HOME/logback/
+COPY start-supervisor.sh /usr/bin/
+COPY config-supervisord.sh /usr/bin/
+
 RUN cat $STORM_HOME/conf/storm.yaml
-COPY ["cluster.xml", "$STORM_HOME/logback/"]
-COPY ["config-supervisord.sh", "start-supervisor.sh", "/usr/bin/"]
 
 RUN chmod +x /usr/bin/start-supervisor.sh /usr/bin/config-supervisord.sh  && \
 	echo [supervisord] | tee -a $SUPERVISORD_CONF && \
