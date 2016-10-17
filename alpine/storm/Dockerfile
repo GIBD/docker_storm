@@ -34,7 +34,5 @@ RUN mkdir $SUPERVISORD_D_CONF && \
 	echo [supervisord] | tee -a $SUPERVISORD_CONF && \
 	echo nodaemon=true | tee -a $SUPERVISORD_CONF && \
 	echo [include] | tee -a $SUPERVISORD_CONF && \
-	echo files=/etc/supervisor.d/*.conf | tee -a $SUPERVISORD_CONF && \
-	\
-	supervisord --configuration $SUPERVISORD_CONF
+	echo files=/etc/supervisor.d/*.conf | tee -a $SUPERVISORD_CONF
 
