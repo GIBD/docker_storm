@@ -2,8 +2,8 @@ FROM gibdfrcu/storm:alpine
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-RUN /usr/bin/config-supervisord.sh nimbus 
-RUN /usr/bin/config-supervisord.sh drpc
+RUN /usr/bin/config-supervisord.sh nimbus && \
+	/usr/bin/config-supervisord.sh drpc
 
 EXPOSE 6627
 EXPOSE 3772
