@@ -1,10 +1,14 @@
 FROM gibdfrcu/base:alpine
 
+
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
+
+
+EXPOSE 8080
+
 
 RUN /usr/bin/config-supervisord.sh ui
 
-EXPOSE 8080
 
 CMD /usr/bin/start-supervisor.sh
 

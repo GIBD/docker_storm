@@ -2,13 +2,18 @@ FROM gibdfrcu/storm:alpine
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-RUN /usr/bin/config-supervisord.sh nimbus && \
-	/usr/bin/config-supervisord.sh drpc
+
+COPY ["start-supervisor.sh", "/usr/bin/"]
+
 
 EXPOSE 6627
 EXPOSE 3772
 EXPOSE 3773
 
-COPY ["start-supervisor.sh", "/usr/bin/"]
+
+RUN /usr/bin/config-supervisord.sh nimbus && \
+	/usr/bin/config-supervisord.sh drpc && \
+	chmod +x /usr/bin/start-supervisor.sh
+
 
 CMD /usr/bin/start-supervisor.sh
