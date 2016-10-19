@@ -2,7 +2,7 @@ FROM gibdfrcu/base:alpine
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV STORM_VERSION="0.9.4" \
+ENV STORM_VERSION="1.0.0" \
 	SUPERVISOR_VERSION="3.3.0" \
 	SUPERVISORD_CONF="/etc/supervisord.conf" \
 	SUPERVISORD_D_CONF="/etc/supervisord.d"
@@ -24,7 +24,6 @@ RUN mkdir $SUPERVISORD_D_CONF && \
 	chown -R storm:storm /var/log/storm && \
 	\
 	ln -s $STORM_HOME/bin/storm /usr/bin/storm
-	
 
 
 COPY storm.yaml $STORM_HOME/conf/
@@ -32,7 +31,7 @@ COPY cluster.xml $STORM_HOME/logback/
 COPY start-supervisor.sh /usr/bin/
 COPY config-supervisord.sh /usr/bin/
 
-RUN cat $STORM_HOME/conf/storm.yaml
+#RUN cat $STORM_HOME/conf/storm.yaml
 
 RUN chmod +x /usr/bin/start-supervisor.sh /usr/bin/config-supervisord.sh  && \
 	echo [supervisord] | tee -a $SUPERVISORD_CONF && \
