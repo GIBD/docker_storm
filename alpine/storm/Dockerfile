@@ -4,13 +4,22 @@ MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
 ENV STORM_VERSION="1.0.0" \
 	SUPERVISOR_VERSION="3.3.0" \
-	SUPERVISORD_CONF="/etc/supervisord.conf" \
-	SUPERVISORD_D_CONF="/etc/supervisord.d"
+	MAVEN_VERSION="3.3.9" 
 
-ENV STORM_HOME="/opt/apache-storm-${STORM_VERSION}"
+ENV	SUPERVISORD_CONF="/etc/supervisord.conf" \
+	SUPERVISORD_D_CONF="/etc/supervisord.d" \
+	\
+	STORM_HOME="/opt/apache-storm-${STORM_VERSION}" \
+	\
+	M2_HOME="/opt/apache-maven-${MAVEN_VERSION}" \
+	MAVEN_OPTS="-Xms256m -Xmx512m"
 
+ENV M2="${M2_HOME}/bin"
+ENV PATH="${M2}:${PATH}"
 
-RUN wget -q -O - http://mirrors.sonic.net/apache/storm/apache-storm-${STORM_VERSION}/apache-storm-${STORM_VERSION}.tar.gz | tar -xzf - -C /opt
+RUN wget -q -O - http://mirrors.sonic.net/apache/storm/apache-storm-${STORM_VERSION}/apache-storm-${STORM_VERSION}.tar.gz | tar -xzf - -C /opt && \
+	wget -q -O - http://mirrors.dcarsat.com.ar/apache/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | tar -xzf - -C /opt 
+
 RUN pip install supervisor==$SUPERVISOR_VERSION
 
 
