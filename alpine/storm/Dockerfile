@@ -2,7 +2,7 @@ FROM gibdfrcu/base:alpine
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV STORM_VERSION="1.0.0" \
+ENV STORM_VERSION="0.10.2" \
 	SUPERVISOR_VERSION="3.3.0" \
 	MAVEN_VERSION="3.3.9" 
 
