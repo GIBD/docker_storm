@@ -1,8 +1,8 @@
-FROM gibdfrcu/base:alpine
+FROM gibdfrcu/base:alpine_jdk1.8.112_py2.7.12
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV STORM_VERSION="0.10.2" \
+ENV STORM_VERSION="1.0.2" \
 	SUPERVISOR_VERSION="3.3.0" \
 	MAVEN_VERSION="3.3.9" 
 
