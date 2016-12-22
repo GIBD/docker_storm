@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM gibdfrcu/base:alpine_jdk1.8.112_py2.7.12
+=======
+FROM gibdfrcu/base:alpine
+>>>>>>> a0322a0aa18e3a9c4c230a618bd5975e08b11d87
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
