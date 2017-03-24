@@ -18,12 +18,10 @@ notifications:
 
 env:
   matrix:
-    - role=base
-    - role=nimbus
-    - role=supervisor
-    - role=ui
-    - ver=0.10.2
-    - ver=1.0.2
+    - role=base               ver=1.0.2
+    - role=nimbus             ver=1.0.2
+    - role=supervisor         ver=1.0.2
+    - role=ui                 ver=1.0.2
 
 branches:
   only:
