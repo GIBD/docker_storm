@@ -1,4 +1,5 @@
-FROM gibdfrcu/storm:alpine_jdk1.8.112_1.0.2
+FROM gibdbigdata/storm:alpine_jdk1.8_1.0.2
+
 
 
 

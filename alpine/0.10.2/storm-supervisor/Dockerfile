@@ -1,4 +1,4 @@
-FROM gibdfrcu/storm:alpine_jdk1.8.112_0.10.2
+FROM gibdbigdata/storm:alpine_jdk1.8_0.10.2
 
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
